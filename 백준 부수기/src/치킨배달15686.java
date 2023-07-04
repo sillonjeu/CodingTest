@@ -1,7 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class 치킨배달15686 {
@@ -59,7 +57,6 @@ public class 치킨배달15686 {
       answer = Math.min(answer, chickenDistance);
       return;
     }
-
     for (int i = start; i < chickenList.size(); i++) {
       selected[i] = true;
       chooseChicken(i + 1, count + 1);
