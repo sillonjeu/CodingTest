@@ -60,7 +60,6 @@ public class 감시15683 {
         }
       }
     }
-
     minBlindSpot = Math.min(minBlindSpot, blindSpot);
   }
 
