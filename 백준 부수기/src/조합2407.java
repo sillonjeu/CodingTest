@@ -11,6 +11,7 @@ public class 조합2407 {
     int n = Integer.parseInt(inputs[0]);
     int m = Integer.parseInt(inputs[1]);
 
+    // int < long <<<< biginteger
     BigInteger n1 = BigInteger.ONE;
     BigInteger n2 = BigInteger.ONE;
 

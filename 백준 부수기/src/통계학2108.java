@@ -26,6 +26,7 @@ public class 통계학2108 {
 
     // 중앙값
     System.out.println(arr[N / 2]);
+    
     // 최빈값
     int[] count = new int[8001]; // 숫자의 등장 횟수를 저장하는 배열
     int[] modes = new int[N]; // 최빈값들을 저장하는 배열
