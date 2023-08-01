@@ -37,7 +37,6 @@ public class 이동하기11048 {
     dp[1][1] = arr[1][1];
     for(int i = 0; i < M+1; i++) { dp[0][i] = 0; }
     for(int i = 0; i < N+1; i++) { dp[i][0] = 0; }
-
     System.out.println(finddp(N, M));
   }
 }
