@@ -34,6 +34,6 @@ public class 경비원2564 {
       cnt += Math.min(path1, path2);
     }
     System.out.println(cnt);
-    
+    //
   }
 }
