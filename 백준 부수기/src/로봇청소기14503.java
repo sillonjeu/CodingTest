@@ -5,61 +5,43 @@ import java.util.StringTokenizer;
 public class 로봇청소기14503 {
   static int N, M, r, c, d;
   static int[][] arr;
+  static int[] dx = {-1, 0, 1, 0}; // 북(0), 동(1), 남(2), 서(3) 순서
+  static int[] dy = {0, 1, 0, -1};
 
   static int cleaning() {
     int result = 0;
     int x = r;
     int y = c;
     int di = d;
-    boolean flag = false;
 
     while(true) {
-      // 해당장소 청소 안했으면 청소해주기
-      if(arr[x][y] == 0) {
-        arr[x][y] = 2;
-        result++;
-      }
-      // 회전하기
-      for(int i = 1; i <= 3; i++) {
-        // 북
-        if(spin(di, i) == 0 && x > 0 && arr[x-1][y] == 0) { 
-          x = x - 1; di = 0; flag = true; break;
-        }
-        // 서
-        if(spin(di, i) == 3 && y > 0 && arr[x][y-1] == 0) {
-          y = y - 1; di = 3; flag = true; break;
-        }
-        // 남
-        if(spin(di, i) == 2 && x < N - 1 && arr[x+1][y] == 0) { 
-          x = x + 1; di = 2; flag = true; break;
-        }
-        // 동
-        if(spin(di, i) == 1 && y < M - 1 && arr[x][y+1] == 0) {
-          y = y + 1; di = 1; flag = true; break;
-        }
-      }
-      // 빈 칸이 없으면
-      if(!flag) {
-        if(di == 0 && x < N - 1 && arr[x+1][y] != 1) { x = x + 1; flag = true;}
-        if(di == 3 && y < M - 1 && arr[x][y+1] != 1) { y = y + 1; flag = true;}
-        if(di == 2 && x > 0 && arr[x-1][y] != 1) { x = x - 1; flag = true;}
-        if(di == 1 && y > 0 && arr[x][y-1] != 1) { y = y - 1; flag = true;}
-      }
-      if(!flag) {
+    boolean flag = false;
+    // 해당장소 청소 안했으면 청소해주기
+    if(arr[x][y] == 0) {
+      arr[x][y] = 2;
+      result++;
+    }
+    // 회전하기
+    for(int i = 0; i < 4; i++) {
+      di = (di + 3) % 4; // 왼쪽 방향(반시계방향으로 90도 회전한 방향)으로 회전
+      int nx = x + dx[di];
+      int ny = y + dy[di];
+      if (nx >= 0 && nx < N && ny >= 0 && ny < M && arr[nx][ny] == 0) { // 청소할 수 있는 공간이면 전진
+        x = nx;
+        y = ny;
+        flag = true;
         break;
       }
     }
-    return result;
-  }
-
-  static int spin(int d, int count) {
-    int result = d; 
-    for(int i = 0; i < count; i++) {
-      if(result == 0) { result = 3;}
-      else if(result == 1) { result = 0;}
-      else if(result == 2) { result = 1;}
-      else if(result == 3) { result = 2;}
+    if (!flag) {
+      int back = (di + 2) % 4; // 현재 바라보는 방향을 유지하면서 후진
+      x += dx[back];
+      y += dy[back];
+      if (arr[x][y] == 1) { // 후진하려는 공간이 벽이면 작동을 멈춤
+        break;
+      }
     }
+  }
     return result;
   }
 
