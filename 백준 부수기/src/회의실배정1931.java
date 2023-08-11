@@ -53,7 +53,7 @@ public class 회의실배정1931 {
         count++;
       }
     }
-
+//
     System.out.println(count);
   }
 
