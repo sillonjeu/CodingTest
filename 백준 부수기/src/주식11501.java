@@ -30,6 +30,7 @@ public class 주식11501 {
           maxmoney += maxPrice - arr[i];
         }
       }
+      
       sb.append(maxmoney).append("\n");
     }
     System.out.print(sb);
