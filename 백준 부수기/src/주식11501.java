@@ -23,6 +23,7 @@ public class 주식11501 {
 
       long maxmoney = 0;
       int maxPrice = arr[N - 1];
+      
       for (int i = N - 2; i >= 0; i--) {
         if (arr[i] > maxPrice) {
           maxPrice = arr[i];
