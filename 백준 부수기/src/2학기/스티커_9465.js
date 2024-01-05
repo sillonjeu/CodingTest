@@ -24,6 +24,5 @@ while (T-- > 0) {
     dp[0][j] = Math.max(dp[1][j - 1], dp[1][j - 2]) + stickers[0][j - 1];
     dp[1][j] = Math.max(dp[0][j - 1], dp[0][j - 2]) + stickers[1][j - 1];
   }
-
   console.log(Math.max(dp[0][n], dp[1][n]));
 }

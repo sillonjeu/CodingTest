@@ -14,10 +14,10 @@ for(let i = 1; i < M + 1; i++) {
         flag[j] = false;
     }
 }
-
 let ischeck = Array.from({length: N+1}, () => false);
 let arr = Array.from({length: N+1}, () => Infinity);
 arr[0] = 0; ischeck[0] = true;
+
 
 for(let i = 0; i < N; i++) {
     if(i + A <= N && flag[i+A] && ischeck[i]) {
@@ -29,6 +29,7 @@ for(let i = 0; i < N; i++) {
         ischeck[i + B] = true;
     }
 }
+
 if(ischeck[N]) {
     console.log(arr[N]);
 }

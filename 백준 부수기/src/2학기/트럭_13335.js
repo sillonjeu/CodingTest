@@ -1,5 +1,4 @@
 // let input = require("fs").readFileSync("./input.txt").toString().split("\n");
-
 let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 let firstLine = input[0].split(" ");
 var n = parseInt(firstLine[0]); // 트럭의 수
@@ -13,20 +12,16 @@ class Queue {
         this.items = [];
         this.totalWeight = 0;
     }
-
     enqueue(truckWeight) {
         this.items.push(truckWeight);
         this.totalWeight += truckWeight;
     }
-
     dequeue() {
         this.totalWeight -= this.items.shift();
     }
-
     isEmpty() {
         return this.items.length === 0;
     }
-
     getTotalWeight() {
         return this.totalWeight;
     }
@@ -41,7 +36,6 @@ while (index < n) {
     if (queue.items.length === w) {
         queue.dequeue();
     }
-
     // 새 트럭이 다리에 올라갈 수 있는 경우
     if (queue.getTotalWeight() + truckWeights[index] <= L) {
         queue.enqueue(truckWeights[index]);
@@ -50,11 +44,8 @@ while (index < n) {
         // 올라갈 수 없다면, 다리가 비워질 때까지 가상의 트럭(무게 0)을 추가
         queue.enqueue(0);
     }
-
     time++;
 }
-
 // 마지막 트럭이 다리를 건너는 시간 추가
 time += w;
-
 console.log(time);

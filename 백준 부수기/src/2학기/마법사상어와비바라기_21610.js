@@ -1,5 +1,4 @@
 // 런타임 에러 뜬다;
-
 const inputs = require("fs")
   .readFileSync(process.platform === "linux" ? "dev/stdin" : "input.txt")
   .toString()
