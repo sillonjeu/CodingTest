@@ -34,6 +34,7 @@ for (let i = 1; i < N + 1; i++) {
   arr[i-1] = Array.from(string).map(Number);
 }
 
+// bfs
 for (let i = 0; i < arr.length; i++) {
   for (let j = 0; j < arr.length; j++) {
     if (!ischeck[i][j] && arr[i][j] === 1) {
