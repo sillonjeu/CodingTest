@@ -43,7 +43,6 @@ function dfs(x, y) {
             dp[x][y] += dfs(nx, ny); // 해당 경로의 수를 더함
         }
     }
-
     return dp[x][y];
 }
 
