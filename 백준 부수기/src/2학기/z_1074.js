@@ -28,6 +28,6 @@ function zOrder(N, r, c) {
     }
 }
 
-const [N, r, c] = inputs[0].split(" ").map(Number); // 예: "2 3 1" -> N=2, r=3, c=1
+const [N, r, c] = inputs[0].split(" ").map(Number); 
 
 console.log(zOrder(N, r, c));
