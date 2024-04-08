@@ -3,16 +3,10 @@ function solution(t, p) {
     let arr = t.split("");
     let check = p.split("");
     
-    console.log(arr);
-    
-    for(let i = 0; i < arr.length - check.length; i++) {
+    for(let i = 0; i <= arr.length - check.length; i++) {
         let flag = true;
-        if(arr[i] == "0") {
-            continue;
-        }
-        
         for(let j = 0; j < check.length; j++) {
-            if(parseInt(arr[i + j] < parseInt(check[j]))) {
+            if(parseInt(arr[i + j]) < parseInt(check[j])) {
                 flag = true;
                 break;
             } else if(parseInt(arr[i + j]) > parseInt(check[j])) {
@@ -20,9 +14,7 @@ function solution(t, p) {
                 break;
             }
         }
-        
         if(flag) {
-            console.log(i);
             answer++;
         } 
     }
