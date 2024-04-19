@@ -100,4 +100,4 @@ function solution(e, starts) {
     
     // 9) 범위별 Max값이 구해져 있으므로 가져와 return 한다. 
     return starts.map(s => maxArr[s]);
-}
+} ///
