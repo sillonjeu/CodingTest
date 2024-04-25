@@ -36,4 +36,5 @@ function solution(k, ranges) {
     }
     
     return answer;
+    //
 }
