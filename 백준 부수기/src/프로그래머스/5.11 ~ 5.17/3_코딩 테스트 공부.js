@@ -1,4 +1,4 @@
 function solution(alp, cop, problems) {
-    var answer = 0;
+    var answer = 1;
     return answer;
 }
